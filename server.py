@@ -9,7 +9,7 @@ tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 app = Flask(__name__, template_folder=tmpl_dir)
 
 
-DATABASEURI = "postgresql://user:password@35.243.220.243/proj1part2"
+DATABASEURI = "postgresql://postgres:Cleanslate25@35.243.220.243/proj1part2"
 
 
 engine = create_engine(DATABASEURI)
@@ -44,15 +44,15 @@ def index():
     #
     # example of a database query
     #
-    cursor = g.conn.execute("SELECT name FROM test")
-    names = []
-    for result in cursor:
-        names.append(result['name'])  # can also be accessed using result[0]
-    cursor.close()
+    # cursor = g.conn.execute("SELECT name FROM test")
+    # names = []
+    # for result in cursor:
+    #     names.append(result['name'])  # can also be accessed using result[0]
+    # cursor.close()
+    #
+    # context = dict(data=names)
 
-    context = dict(data=names)
-
-    return render_template("index.html", **context)
+    return render_template("index.html" )#**context)
 
 
 @app.route('/another')
