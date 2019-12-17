@@ -1,6 +1,6 @@
 
 import os
-# accessible as a variable in index.html:
+# accessible as a variable in index.html in templates
 from sqlalchemy import *
 from sqlalchemy.pool import NullPool
 from flask import Flask, request, render_template, g, redirect, Response
